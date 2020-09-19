@@ -1,0 +1,14 @@
+<div class="control-group pull-left">
+  <label class="control-label" for="search-tag-group">{{i18n "search.advanced.tag_group.label"}}</label>
+  <div class="controls">
+    {{tag-group-chooser
+      id="all-tag-group"
+      tagGroups=searchedTerms.notInTagGroup
+      onChangeSearchedTermField=onChangeSearchedTermField
+      options=(hash
+        maximum=1
+        filterPlaceholder="search.advanced.tag_group.tag_group_selector_placeholder"
+      )
+    }}
+  </div>
+</div>

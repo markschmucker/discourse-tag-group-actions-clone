@@ -1,0 +1,10 @@
+plugins:
+  tag_group_action_enabled:
+    default: true
+    client: true
+  tga_bulk_action_tag_group_name:
+    default: ""
+    client: true
+  tga_bulk_action_replace_tag_name:
+    default: ""
+    client: true

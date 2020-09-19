@@ -1,0 +1,10 @@
+en:
+  js:
+    search:
+      advanced:
+        tag_group:
+          label: "Not In Tag Group"
+          tag_group_selector_placeholder: "Search..."
+    topics:
+      bulk:
+        close_deal: "Close Deal"
