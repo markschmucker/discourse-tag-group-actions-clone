@@ -1,4 +1,4 @@
-# discourse Tag Group Actions
+# Discourse Tag Group Actions
 This plugin adds features to your Discourse.
 
 - adds a new `search-advanced-option` to display topics not in particular tag-group which will be visible only to staff.
@@ -14,6 +14,7 @@ This plugin adds features to your Discourse.
 - Not sure how to install a plugin?<a href="https://meta.discourse.org/t/install-plugins-in-discourse/19157"> Follow the steps here</a>
 
 ## Site Settings
+- `tag_group_action_enabled` to enable the plugin by default it is true
 - `tga_bulk_action_tag_group_name` will perform bulk on tags of specified tag-group-name (case sensitive)
 - `tga_bulk_action_replace_tag_name` will be used in bulk-action to replace tag from `tga_bulk_action_tag_group_name` (case-sensitive)
 
