@@ -1,0 +1,5 @@
+en:
+  site_settings:
+    tag_group_action_enabled: "Enable the Tag group actions plugin"
+    tga_bulk_action_tag_group_name: "Name of tag group to apply bulk-action on (Case Sensitive)"
+    tga_bulk_action_replace_tag_name: "Name of tag to replace in bulk-action (Case Sensitive)"

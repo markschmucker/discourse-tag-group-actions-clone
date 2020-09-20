@@ -4,6 +4,7 @@
 # about: adds new bulk-action and search-advance option
 # version: 0.1
 # authors: Ahmed Gagan
+# url: https://github.com/Ahmedgagan/discourse-tag-group-actions
 
 enabled_site_setting :tag_group_action_enabled
 
@@ -15,7 +16,7 @@ after_initialize do
 
       if tag_group = TagGroup.find_by_name(matchNew)
 
-        posts.where("topics.id IN (
+        posts.where("topics.id NOT IN (
           SELECT DISTINCT tt.topic_id
           FROM topic_tags tt
           INNER JOIN tag_group_memberships tgm
