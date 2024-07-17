@@ -1,7 +1,5 @@
-import { withPluginApi } from "discourse/lib/plugin-api";
 import SearchAdvancedOptions from "discourse/components/search-advanced-options";
-import { addBulkButton } from "discourse/controllers/topic-bulk-actions";
-import TopicButtonAction from "discourse/controllers/topic-bulk-actions";
+import { withPluginApi } from "discourse/lib/plugin-api";
 
 function initialize(api) {
   api.modifyClass("component:tag-group-chooser", {
@@ -17,6 +15,19 @@ function initialize(api) {
         }
       },
     },
+  });
+
+  api.addBulkActionButton({
+    label: "topics.bulk.close_deal",
+    icon: "user-plus",
+    class: "btn-default",
+    visible: ({ siteSettings }) =>
+      siteSettings.tga_bulk_action_tag_group_name &&
+      siteSettings.tga_bulk_action_replace_tag_name,
+    action({ performAndRefresh }) {
+      performAndRefresh({ type: "closeDeal" });
+    },
+    actionType: "performAndRefresh",
   });
 }
 
@@ -68,25 +79,6 @@ export default {
             REGEXP_TAG_GROUP_PREFIX
           );
         },
-      });
-    }
-
-    if (
-      currentUser &&
-      siteSettings.tga_bulk_action_tag_group_name &&
-      siteSettings.tga_bulk_action_replace_tag_name
-    ) {
-      TopicButtonAction.reopen({
-        actions: {
-          closeDeal() {
-            this.performAndRefresh({ type: "closeDeal" });
-          },
-        },
-      });
-
-      addBulkButton("closeDeal", "close_deal", {
-        icon: "user-plus",
-        class: "btn-default",
       });
     }
 
